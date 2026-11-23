@@ -1,0 +1,21 @@
+ This is to consolidate my knowledge of writing this code
+terraform {
+	required_provider {
+		kubernetes = {
+			source = "hashicorp/kubernetes"
+			version = "~>3.0"
+  }
+ }
+}
+
+provider "kubernetes" {
+	config_path = "~/.kube/config"
+}
+
+resource "kubernetes_namespace_v1" "lab" {
+	                             metadata {
+					 name =	"terraform_lab"
+					      }
+					 }
+ 
+
